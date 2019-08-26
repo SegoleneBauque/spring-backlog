@@ -4,5 +4,5 @@ export class Task {
   item: string;
   personInCharge: string;
   etat: string;
-  definitionOfDone: string;
+  acceptanceCriteria: Map<string, boolean>;
 }
