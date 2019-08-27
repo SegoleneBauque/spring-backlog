@@ -1,5 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Task} from '../task';
+import {TaskService} from "../services/task.service";
 
 @Component({
   selector: 'app-task',
@@ -10,14 +11,14 @@ export class TaskComponent implements OnInit, OnDestroy {
 
   task: Task = {
     id: 1,
-    titre: 'Ma premiere tache',
+    title: 'Ma premiere tache',
     item: 'Afficher une tache',
     personInCharge: 'David Schieffer',
-    etat: 'Todo',
+    state: 'Todo',
     acceptanceCriteria: new Map().set("Mon premier critere", true).set("mon deuxieme critere", false)
   };
 
-  constructor() {
+  constructor(private taskService: TaskService) {
   }
 
   ngOnInit() {
@@ -27,22 +28,22 @@ export class TaskComponent implements OnInit, OnDestroy {
   }
 
   toNextStep() {
-    switch (this.task.etat) {
+    switch (this.task.state) {
       case 'Todo':
-        this.task.etat = 'WIP';
+        this.task.state = 'WIP';
         break;
       case 'WIP':
-        this.task.etat = 'QA';
+        this.task.state = 'QA';
         break;
       case 'QA':
-        this.task.etat = 'Done';
+        this.task.state = 'Done';
         break;
       default:
     }
   }
 
   backToWIP() {
-    this.task.etat = 'WIP';
+    this.task.state = 'WIP';
   }
 
   checkCriteria(critere: string) {

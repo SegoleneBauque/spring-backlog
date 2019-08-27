@@ -1,18 +1,18 @@
 <div class="card" style="width: 400px;">
   <div class="card-body">
     <h5 class="card-text">Id tâche : {{ task.id }}</h5>
-    <h5 class="card-title">Titre : {{ task.titre }}</h5>
+    <h5 class="card-title">Titre : {{ task.title }}</h5>
     <h6 class="card-subtitle mb-2 text-muted">PBI correspondant : {{ task.item }}</h6>
     <p class="card-text">Responsable de la tâche : {{ task.personInCharge }}</p>
-    <p class="card-text">Etat de la tâche : {{ task.etat }}</p>
+    <p class="card-text">Etat de la tâche : {{ task.state }}</p>
     <p class="card-text">Acceptance Criteria(s) :</p>
     <p *ngFor="let critere of task.acceptanceCriteria.entries()" class="card-text">
       <input type="checkbox" (click)="checkCriteria(critere[0])" *ngIf="!critere[1]">
       <input type="checkbox" (click)="checkCriteria(critere[0])" *ngIf="critere[1]" checked>
       {{ critere[0] }}
     </p>
-    <a *ngIf="task.etat === 'QA'" (click)="backToWIP()" href="#" class="card-link">Remettre en WIP</a>
-    <a *ngIf="task.etat !== 'Done'" (click)="toNextStep()" href="#" class="card-link">Passer à l'étape suivante</a>
+    <a *ngIf="task.state === 'QA'" (click)="backToWIP()" href="#" class="card-link">Remettre en WIP</a>
+    <a *ngIf="task.state !== 'Done'" (click)="toNextStep()" href="#" class="card-link">Passer à l'étape suivante</a>
   </div>
 </div>
 

@@ -1,8 +1,8 @@
 export class Task {
   id: number;
-  titre: string;
+  title: string;
   item: string;
   personInCharge: string;
-  etat: string;
+  state: string;
   acceptanceCriteria: Map<string, boolean>;
 }

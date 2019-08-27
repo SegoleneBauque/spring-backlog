@@ -7,10 +7,10 @@
           "tasks": [
             {
               "id": 1,
-              "titre": "Ma premiere tache",
+              "title": "Ma premiere tache",
               "item": "Afficher une tache",
               "personInCharge": "David Schieffer",
-              "etat": "Todo",
+              "state": "Todo",
               "acceptanceCriteria": "On ne sait pas encore quoi mettre ici"
             }
           ]
