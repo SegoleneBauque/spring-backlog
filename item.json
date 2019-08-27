@@ -14,7 +14,24 @@
       "item": "Afficher une tache",
       "personInCharge": "David Schieffer",
       "state": "Todo",
-      "acceptanceCriteria": "On ne sait pas encore quoi mettre ici"
+      "acceptanceCriteria": [
+        {
+          "key": "La revue de code a été effectuée",
+          "value": true
+        },
+        {
+          "key": "Les tests définis dans la User Story ont été réalisés et passés avec succès, notamment par l’équipe de Quality Assurance",
+          "value": true
+        },
+        {
+          "key": "Le Product Owner a vu la démo et a validé le fonctionnement",
+          "value": true
+        },
+        {
+          "key": "la documentation concernant l’architecture est bien fournie",
+          "value": true
+        }
+      ]
     }
   ]
 }
