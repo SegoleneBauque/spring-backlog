@@ -1,0 +1,20 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "title": "Je veux cliquer sur le bouton",
+      "userStory": "Je suis tatillon ! Je veux mon bouton !"
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Ma premiere tache",
+      "itemId": 1,
+      "item": "Afficher une tache",
+      "personInCharge": "David Schieffer",
+      "state": "Todo",
+      "acceptanceCriteria": "On ne sait pas encore quoi mettre ici"
+    }
+  ]
+}

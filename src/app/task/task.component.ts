@@ -12,6 +12,7 @@ export class TaskComponent implements OnInit, OnDestroy {
   task: Task = {
     id: 1,
     title: 'Ma premiere tache',
+    itemId: 1,
     item: 'Afficher une tache',
     personInCharge: 'David Schieffer',
     state: 'Todo',
@@ -36,7 +37,8 @@ export class TaskComponent implements OnInit, OnDestroy {
         this.task.state = 'QA';
         break;
       case 'QA':
-        this.task.state = 'Done';
+        if (this.isAllChecked())
+          this.task.state = 'Done';
         break;
       default:
     }
@@ -52,4 +54,18 @@ export class TaskComponent implements OnInit, OnDestroy {
     else
       this.task.acceptanceCriteria.set(critere, false);
   }
+
+  isAllChecked() {
+    if (this.task.state == 'QA') {
+      for (let critere of this.task.acceptanceCriteria.entries()) {
+        if (!critere[1]) {
+          return false;
+        }
+      }
+    }
+    return true;
+  }
+
+
+
 }
