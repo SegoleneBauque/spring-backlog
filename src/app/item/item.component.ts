@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { item } from '../item';
+import { Task } from '../task';
+import { TaskService } from './task.service';
 
 @Component({
   selector: 'app-item',
@@ -14,14 +16,21 @@ export class ItemComponent implements OnInit {
 
 item: item = {
   id :  1,
-  title : "Bouton pour le client",
-userStory : 'Je souhaite appuyer sur le bouton avec ma souris'
+  title : "Espace client",
+  userStory : 'Je souhaite avoir un compte utilisateur'
 }
-  constructor() {
+
+  constructor(taskService: TaskService) {
 
    }
 
   ngOnInit() {}
+
+  private getAllTasks(idItem: number)
+  {
+    this.taskService.
+  }
+
 
 }
 

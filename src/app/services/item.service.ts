@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { TaskComponent } from '../task/task.component';
 
 import { Observable } from 'rxjs';
+
 
 
 @Injectable({
@@ -14,6 +14,5 @@ export class ItemService {
 
   constructor(private http: HttpClient) {}
 
- 
 
 }
