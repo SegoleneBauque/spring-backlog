@@ -1,7 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { item } from '../item';
-import { Task } from '../task';
-import { TaskService } from './task.service';
 
 @Component({
   selector: 'app-item',
@@ -18,18 +16,18 @@ item: item = {
   id :  1,
   title : "Espace client",
   userStory : 'Je souhaite avoir un compte utilisateur'
-}
+};
 
-  constructor(taskService: TaskService) {
+  constructor() {
 
    }
 
   ngOnInit() {}
 
-  private getAllTasks(idItem: number)
+  /*private getAllTasks(idItem: number)
   {
     this.taskService.
-  }
+  }*/
 
 
 }
