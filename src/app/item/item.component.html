@@ -1,0 +1,35 @@
+
+<!-- <app-task
+*ngFor="task of tasks"
+(update)="updateTasksInStorage(task)"
+(delete)="deleteTask(task)"
+[task]="task"
+></app-task>
+ -->
+
+<!--Ouverture de l'édition de l'item, l'item ne peut être créé/modifié que par cette UI-->
+
+<div class="input-group mb-3 item-title">
+    <div class="input-group-prepend"><button class="btn btn-outline-secondary" type="button">Button</button>
+    </div>
+    <input type="text" 
+    value="{{item.title}}"
+    placeholder="Item's title" 
+    class="form-control" 
+    aria-label="Item title" 
+    aria-describedby="basic-addon1">
+  </div>
+  
+
+  <div class="input-group mb-3 item-title">
+    <div class="input-group-prepend"><button class="btn btn-outline-secondary" type="button">Button</button>
+    </div>
+    <input type="text" 
+    value="item.getTitle()"
+    placeholder="Item's title" 
+    class="form-control" 
+    aria-label="Item title" 
+    aria-describedby="basic-addon1">
+  </div>
+
+  <!--The Tasks part-->
