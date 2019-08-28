@@ -11,14 +11,42 @@
   <tbody>
   <tr>
     <th scope="row">itemId - itemTitle</th>
-    <td><p *ngFor="let task of tasks" class="btn-info"><span *ngIf="shouldDisplayTask(task,1,'Todo')"> {{ task.title }}
-      - {{ task.personInCharge }} </span></p></td>
-    <td><p *ngFor="let task of tasks" class="btn-primary"><span
-      *ngIf="shouldDisplayTask(task,1,'WIP')"> {{ task.title }} - {{ task.personInCharge }} </span></p></td>
-    <td><p *ngFor="let task of tasks"><span *ngIf="shouldDisplayTask(task,1,'QA')"> {{ task.title }}
-      - {{ task.personInCharge }}</span></p></td>
-    <td><p *ngFor="let task of tasks" class="btn-success"><span
-      *ngIf="shouldDisplayTask(task,1,'Done')"> {{ task.title }} - {{ task.personInCharge }}</span></p></td>
+    <td>
+      <p *ngFor="let task of tasks" class="btn-primary">
+        <span *ngIf="shouldDisplayTask(task,1,'Todo')">
+          <a routerLink="/tasks/{{ task.id }}">
+            {{ task.title }} - {{ task.personInCharge }}
+          </a>
+        </span>
+      </p>
+    </td>
+    <td>
+      <p *ngFor="let task of tasks" class="btn-info">
+        <span *ngIf="shouldDisplayTask(task,1,'WIP')">
+          <a routerLink="/tasks/{{ task.id }}">
+            {{ task.title }} - {{ task.personInCharge }}
+          </a>
+        </span>
+      </p>
+    </td>
+    <td>
+      <p *ngFor="let task of tasks" class="btn-warning">
+        <span *ngIf="shouldDisplayTask(task,1,'QA')">
+          <a routerLink="/tasks/{{ task.id }}">
+            {{ task.title }} - {{ task.personInCharge }}
+          </a>
+        </span>
+      </p>
+    </td>
+    <td>
+      <p *ngFor="let task of tasks" class="btn-success">
+        <span *ngIf="shouldDisplayTask(task,1,'Done')">
+          <a routerLink="/tasks/{{ task.id }}">
+            {{ task.title }} - {{ task.personInCharge }}
+          </a>
+        </span>
+      </p>
+    </td>
   </tr>
   </tbody>
 </table>

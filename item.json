@@ -9,12 +9,38 @@
   "tasks": [
     {
       "id": 1,
-      "title": "Ma premiere tache",
+      "title": "Ma premiere VRAIE tache",
       "itemId": 1,
       "item": "Afficher une tache",
       "personInCharge": "David Schieffer",
-      "state": "Todo",
-      "acceptanceCriteria": [
+      "state": "WIP",
+      "acceptanceCriterias": [
+        {
+          "key": "La revue de code a été effectuée",
+          "value": true
+        },
+        {
+          "key": "Les tests définis dans la User Story ont été réalisés et passés avec succès, notamment par l’équipe de Quality Assurance",
+          "value": false
+        },
+        {
+          "key": "Le Product Owner a vu la démo et a validé le fonctionnement",
+          "value": true
+        },
+        {
+          "key": "la documentation concernant l’architecture est bien fournie",
+          "value": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Ma deuxième VRAIE tache",
+      "itemId": 1,
+      "item": "Afficher une tache",
+      "personInCharge": "David Schieffer",
+      "state": "Done",
+      "acceptanceCriterias": [
         {
           "key": "La revue de code a été effectuée",
           "value": true

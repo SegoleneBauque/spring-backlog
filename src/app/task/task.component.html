@@ -1,19 +1,20 @@
 <div class="card" style="width: 400px;">
-  <div class="card-body">
+  <div class="card-body" i *ngIf="task">
     <h5 class="card-text">Id tâche : {{ task.id }}</h5>
     <h5 class="card-title">Titre : {{ task.title }}</h5>
     <h6 class="card-subtitle mb-2 text-muted">PBI correspondant : {{ task.itemId }} - {{ task.item }}</h6>
     <p class="card-text">Responsable de la tâche : {{ task.personInCharge }}</p>
     <p class="card-text">Etat de la tâche : {{ task.state }}</p>
     <p class="card-text">Acceptance Criteria(s) :</p>
-    <p *ngFor="let critere of task.acceptanceCriteria.entries()" class="card-text">
-      <input type="checkbox" (click)="checkCriteria(critere[0])" *ngIf="!critere[1]">
-      <input type="checkbox" (click)="checkCriteria(critere[0])" *ngIf="critere[1]" checked>
-      {{ critere[0] }}
+    <p *ngFor="let critere of task.acceptanceCriterias" class="card-text">
+      <input type="checkbox" (click)="toggleCriteria(critere)" *ngIf="!critere.value">
+      <input type="checkbox" (click)="toggleCriteria(critere)" *ngIf="critere.value" checked>
+      {{ critere.key }}
     </p>
-    <a *ngIf="task.state === 'QA'" (click)="backToWIP()" href="#" class="card-link">Remettre en WIP</a>
-    <a *ngIf="task.state !== 'Done'" (click)="toNextStep()" href="#" [ngClass]="{'adisabled':!isAllChecked()}"
+    <a *ngIf="task.state === 'QA'" (click)="backToWIP()" class="card-link">Remettre en WIP</a>
+    <a *ngIf="task.state !== 'Done'" (click)="toNextStep()" [ngClass]="{'adisabled':!isAllChecked()}"
        class="card-link" id="nextStep">Passer à l'étape suivante</a>
+    <a class="btn-primary" routerLink="/home">Retour</a>
   </div>
 </div>
 
