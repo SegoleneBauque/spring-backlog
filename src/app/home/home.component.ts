@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Task} from '../task';
 import {TaskService} from "../services/task.service";
+import {Item} from "../item";
+import {ItemService} from "../services/item.service";
 
 @Component({
   selector: 'app-home',
@@ -10,12 +12,17 @@ import {TaskService} from "../services/task.service";
 export class HomeComponent implements OnInit {
 
   tasks: Task[];
+  items: Item[];
 
-  constructor(private taskService: TaskService) { }
+  constructor(private taskService: TaskService, private itemService: ItemService) { }
 
   ngOnInit() {
     this.taskService.getTasks().subscribe(
       result => this.tasks = result,
+      error => console.log("Une erreur est survenue", error)
+    )
+    this.itemService.getItems().subscribe(
+      result => this.items = result,
       error => console.log("Une erreur est survenue", error)
     )
   }

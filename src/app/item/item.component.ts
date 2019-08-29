@@ -22,7 +22,6 @@ item: Item;
    }
 
   ngOnInit() {
-    console.log(this.router.url)
     const itemId = +this.route.snapshot.paramMap.get('id');
 
     this.itemService.getItem(itemId).subscribe(result => this.item = result,

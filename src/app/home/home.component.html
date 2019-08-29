@@ -10,7 +10,7 @@
   </thead>
   <tbody>
   <tr>
-    <th scope="row">itemId - itemTitle</th>
+    <th *ngFor="let item of items" scope="row"> {{ item.id }} - {{ item.title }} </th>
     <td>
       <p *ngFor="let task of tasks" class="btn-primary">
         <span *ngIf="shouldDisplayTask(task,1,'Todo')">
