@@ -1,0 +1,10 @@
+.item-title
+{
+    display: flex;
+    flex-direction: row;
+    border: 2px red solid;
+}
+
+.input-group{
+    width: 30%;
+}
