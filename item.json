@@ -4,6 +4,11 @@
       "id": 1,
       "title": "Je veux cliquer sur le bouton",
       "userStory": "Je suis tatillon ! Je veux mon bouton !"
+    },
+    {
+      "id": 2,
+      "title": "Je veux cliquer sur l'autre bouton",
+      "userStory": "Je suis vraiment tatillon ! Je veux mes boutons !"
     }
   ],
   "tasks": [
@@ -11,13 +16,13 @@
       "id": 1,
       "title": "Ma premiere VRAIE tache",
       "itemId": 1,
-      "item": "Afficher une tache",
-      "personInCharge": "David Schieffer",
+      "item": "Je veux cliquer sur le bouton",
+      "personInCharge": "Cyrille",
       "state": "WIP",
       "acceptanceCriterias": [
         {
           "key": "La revue de code a été effectuée",
-          "value": true
+          "value": false
         },
         {
           "key": "Les tests définis dans la User Story ont été réalisés et passés avec succès, notamment par l’équipe de Quality Assurance",
@@ -25,7 +30,7 @@
         },
         {
           "key": "Le Product Owner a vu la démo et a validé le fonctionnement",
-          "value": true
+          "value": false
         },
         {
           "key": "la documentation concernant l’architecture est bien fournie",
@@ -36,26 +41,26 @@
     {
       "id": 2,
       "title": "Ma deuxième VRAIE tache",
-      "itemId": 1,
-      "item": "Afficher une tache",
-      "personInCharge": "David Schieffer",
-      "state": "Done",
+      "itemId": 2,
+      "item": "Je veux cliquer sur l'autre bouton",
+      "personInCharge": "Ségolène",
+      "state": "Todo",
       "acceptanceCriterias": [
         {
           "key": "La revue de code a été effectuée",
-          "value": true
+          "value": false
         },
         {
           "key": "Les tests définis dans la User Story ont été réalisés et passés avec succès, notamment par l’équipe de Quality Assurance",
-          "value": true
+          "value": false
         },
         {
           "key": "Le Product Owner a vu la démo et a validé le fonctionnement",
-          "value": true
+          "value": false
         },
         {
           "key": "la documentation concernant l’architecture est bien fournie",
-          "value": true
+          "value": false
         }
       ]
     }

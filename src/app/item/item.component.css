@@ -8,3 +8,28 @@
 .input-group{
     width: 30%;
 }
+
+.whole {
+  margin: auto;
+  width: 96vw;
+  border-radius: 10px;
+  background-color: azure;
+}
+
+fieldset {
+  background-color: aliceblue;
+  border-radius: 10px;
+  padding-left: 20px;
+}
+
+button {
+  margin: 15px 15px;
+}
+
+.unbold {
+  font-weight: normal;
+}
+
+#pbi-details {
+  padding-left: 30px;
+}

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Task} from '../task';
 import {TaskService} from "../services/task.service";
 import {Item} from "../item";
@@ -35,5 +35,4 @@ export class HomeComponent implements OnInit {
   }
     return true;
   }
-
 }

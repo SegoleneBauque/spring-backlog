@@ -9,11 +9,15 @@
   </tr>
   </thead>
   <tbody>
-  <tr>
-    <th *ngFor="let item of items" scope="row"> {{ item.id }} - {{ item.title }} </th>
+  <tr *ngFor="let item of items">
+    <th scope="row" class="btn btn-info">
+      <a routerLink="/items/{{ item.id }}">
+        {{ item.id }} - {{ item.title }}
+      </a>
+    </th>
     <td>
       <p *ngFor="let task of tasks" class="btn-primary">
-        <span *ngIf="shouldDisplayTask(task,1,'Todo')">
+        <span *ngIf="shouldDisplayTask(task,item.id,'Todo')">
           <a routerLink="/tasks/{{ task.id }}">
             {{ task.title }} - {{ task.personInCharge }}
           </a>
@@ -22,7 +26,7 @@
     </td>
     <td>
       <p *ngFor="let task of tasks" class="btn-info">
-        <span *ngIf="shouldDisplayTask(task,1,'WIP')">
+        <span *ngIf="shouldDisplayTask(task,item.id,'WIP')">
           <a routerLink="/tasks/{{ task.id }}">
             {{ task.title }} - {{ task.personInCharge }}
           </a>
@@ -31,7 +35,7 @@
     </td>
     <td>
       <p *ngFor="let task of tasks" class="btn-warning">
-        <span *ngIf="shouldDisplayTask(task,1,'QA')">
+        <span *ngIf="shouldDisplayTask(task,item.id,'QA')">
           <a routerLink="/tasks/{{ task.id }}">
             {{ task.title }} - {{ task.personInCharge }}
           </a>
@@ -40,7 +44,7 @@
     </td>
     <td>
       <p *ngFor="let task of tasks" class="btn-success">
-        <span *ngIf="shouldDisplayTask(task,1,'Done')">
+        <span *ngIf="shouldDisplayTask(task,item.id,'Done')">
           <a routerLink="/tasks/{{ task.id }}">
             {{ task.title }} - {{ task.personInCharge }}
           </a>
