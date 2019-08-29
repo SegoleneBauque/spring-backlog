@@ -1,4 +1,3 @@
-
 <!-- <app-task
 *ngFor="task of tasks"
 (update)="updateTasksInStorage(task)"
@@ -9,32 +8,65 @@
 
 <!--Ouverture de l'édition de l'item, l'item ne peut être créé/modifié que par cette UI-->
 
-
-<div><h4>Nom de l'item</h4><p>Product Backlog Item N° {{item.id}}</p></div>
-<div class="input-group mb-3 item-title">
-    <div class="input-group-prepend"><button class="btn btn-outline-secondary" type="button">Button</button>
-    </div>
-    <input type="text" 
-    value="{{item.title}}"
-    placeholder="Item's title" 
-    class="form-control" 
-    aria-label="Item title" 
-    aria-describedby="basic-addon1">
+<div *ngIf="item">
+  <div>
+    <h4>Nom de l'item : {{item.title}}</h4>
+    <p>Product Backlog Item N° {{item.id}}</p>
   </div>
-  
-
-  <h5>User story</h5>
   <div class="input-group mb-3 item-title">
     <div class="input-group-prepend"><button class="btn btn-outline-secondary" type="button">Button</button>
     </div>
-    <input type="text" 
-    value="{{item.userStory}}"
-    placeholder="Item's title" 
-    class="form-control" 
-    aria-label="Item title" 
-    aria-describedby="basic-addon1">
+    <input type="text" value="{{item.title}}" placeholder="Item's title" class="form-control" aria-label="Item title"
+      aria-describedby="basic-addon1">
   </div>
+</div>
 
-  <!--The Tasks part-->
 
-<app-task></app-task>
+<h5>User story</h5>
+<div class="input-group mb-3 item-title" *ngIf="item">
+  <div class="input-group-prepend">
+    <button class="btn btn-outline-secondary" type="button">Button</button>
+  </div>
+  <input type="text" value="{{item.userStory}}" placeholder="Item's title" class="form-control" aria-label="Item title"
+    aria-describedby="basic-addon1">
+</div>
+<!--Nouvel Item vide-->
+
+<div>
+  <h4>Nom de l'item</h4>
+</div>
+<div class="input-group mb-3 item-title">
+  <div class="input-group-prepend"><button class="btn btn-outline-secondary" type="button">Button</button>
+  </div>
+  <input type="text" placeholder="Titre de l'item" class="form-control" aria-label="Item title"
+    aria-describedby="basic-addon1">
+</div>
+
+
+<h5>User story</h5>
+<div class="input-group mb-3 item-title">
+  <div class="input-group-prepend"><button class="btn btn-outline-secondary" type="button">Button</button>
+  </div>
+  <input type="text" placeholder="User story correspondante" class="form-control" aria-label="Item title"
+    aria-describedby="basic-addon1">
+</div>
+
+<p (click)=dummy()>YOOOOOO</p>
+
+<!--
+<form class="input-group">
+  <div class="form-group">
+    <label for="taskTitle">Titre de la tâche</label>
+    <input type="text" class="form-control" id="taskTitle" aria-describedby="taskTitleHelp"
+      placeholder="Le titre de la tâche">
+  </div>
+  <div class="form-group">
+    <label for="taskPersonInCharge">Personne en charge</label>
+    <input type="text" class="form-control" id="taskPersonInCharge" aria-describedby="taskPersonInChargeHelp"
+      placeholder="La personne en charge">
+  </div>
+  <button type="submit" class="btn btn-primary">Créer la nouvelle tâche</button>
+</form>
+-->
+
+<!--The Tasks part-->

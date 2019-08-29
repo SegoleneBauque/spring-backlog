@@ -1,6 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Task} from '../task';
-import {TaskService} from "../services/task.service";
+import {TaskService} from '../services/task.service';
 
 @Component({
   selector: 'app-task',
@@ -16,7 +16,7 @@ export class TaskComponent implements OnInit, OnDestroy {
     item: 'Afficher une tache',
     personInCharge: 'David Schieffer',
     state: 'Todo',
-    acceptanceCriteria: new Map().set("Mon premier critere", true).set("mon deuxieme critere", false)
+    acceptanceCriteria: new Map().set('Mon premier critere', true).set('mon deuxieme critere', false)
   };
 
   constructor(private taskService: TaskService) {

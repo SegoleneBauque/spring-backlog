@@ -1,5 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {Item} from '../item';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Item } from '../item';
+import { ItemService } from '../services/item.service';
 
 @Component({
   selector: 'app-item',
@@ -11,24 +13,21 @@ import {Item} from '../item';
 export class ItemComponent implements OnInit {
 
 
-  item: Item = {
-  id :  1,
-  title : "Espace client",
-    userStory: 'Je souhaite avoir un compte utilisateur',
-    tasks: []
-};
+ 
 
-  constructor() {
+item: Item;
+
+  constructor(private itemService: ItemService, private route: ActivatedRoute, private router: Router) {
 
    }
 
-  ngOnInit() {}
-
-  /*private getAllTasks(idItem: number)
-  {
-    this.taskService.
-  }*/
-
+  ngOnInit() {
+    console.log(this.router.url)
+    const itemId = +this.route.snapshot.paramMap.get('id');
+    
+    this.itemService.getItem(itemId).subscribe(result => this.item = result,
+      error => console.error('une erreur est survenue', error));
+      }
 
 }
 
