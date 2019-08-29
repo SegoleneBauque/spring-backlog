@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Task} from '../task';
 import {TaskService} from "../services/task.service";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-task',
@@ -11,17 +11,8 @@ import {ActivatedRoute} from "@angular/router";
 export class TaskComponent implements OnInit, OnDestroy {
 
   task: Task;
-  //   = {
-  //   id: 1,
-  //   title: 'Ma premiere tache',
-  //   itemId: 1,
-  //   item: 'Afficher une tache',
-  //   personInCharge: 'David Schieffer',
-  //   state: 'Todo',
-  //   acceptanceCriterias: new Map().set("Mon premier critere", true).set("mon deuxieme critere", false)
-  // };
 
-  constructor(private taskService: TaskService, private route: ActivatedRoute) {
+  constructor(private taskService: TaskService, private route: ActivatedRoute, private router: Router) {
   }
 
   ngOnInit() {

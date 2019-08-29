@@ -10,43 +10,6 @@ import {TaskService} from "../services/task.service";
 export class HomeComponent implements OnInit {
 
   tasks: Task[];
-  //  = [{
-  //  id: 1,
-  //  title: 'Ma premiere tâche',
-  //  itemId: 1,
-  //  item: 'Afficher une tâche',
-  //  personInCharge: 'David Schieffer',
-  //  state: 'Todo',
-  //  acceptanceCriterias: new Map().set("Mon premier critère", true).set("mon deuxième critère", false)
-  //  },
-  //  {
-  //    id: 2,
-  //    title: 'Ma deuxième  tâche',
-  //    itemId: 1,
-  //    item: 'Afficher une deuxième tâche',
-  //    personInCharge: 'David Schieffer',
-  //    state: 'WIP',
-  //    acceptanceCriterias: new Map().set("Mon premier critère", true).set("mon deuxième critère", false)
-  //  },
-  //  {
-  //    id: 3,
-  //    title: 'Ma troisième  tâche',
-  //    itemId: 1,
-  //    item: 'Afficher une troisième tâche',
-  //    personInCharge: 'David Schieffer',
-  //    state: 'QA',
-  //    acceptanceCriterias: new Map().set("Mon premier critère", true).set("mon deuxième critère", false)
-  //  },
-  //  {
-  //    id: 4,
-  //    title: 'Ma quatrième  tâche',
-  //    itemId: 1,
-  //    item: 'Afficher une quatrième tâche',
-  //    personInCharge: 'David Schieffer',
-  //    state: 'Done',
-  //    acceptanceCriterias: new Map().set("Mon premier critère", true).set("mon deuxième critère", false)
-  //  }
-  //  ];
 
   constructor(private taskService: TaskService) { }
 
