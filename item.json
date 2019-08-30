@@ -18,7 +18,7 @@
       "itemId": 1,
       "item": "Je veux cliquer sur le bouton",
       "personInCharge": "Cyrille",
-      "state": "QA",
+      "state": "Todo",
       "acceptanceCriterias": [
         {
           "key": "La revue de code a été effectuée",
