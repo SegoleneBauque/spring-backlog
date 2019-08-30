@@ -9,6 +9,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {ItemComponent} from "./item/item.component";
 import {HomeComponent} from './home/home.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
+import { NewItemComponent } from './new-item/new-item.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
     TaskComponent,
     ItemComponent,
     HomeComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    NewItemComponent
   ],
   imports: [
     BrowserModule,

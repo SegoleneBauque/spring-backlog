@@ -1,0 +1,15 @@
+.whole {
+  background-color: aliceblue;
+  width: 95vw;
+  margin: auto;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+button {
+  margin-left: 15px;
+}
+
+#boutons {
+  align-content: center;
+}
