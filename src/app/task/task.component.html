@@ -7,9 +7,11 @@
     <p class="card-text">Etat de la tâche : {{ task.state }}</p>
     <p class="card-text">Acceptance Criteria(s) :</p>
     <p *ngFor="let critere of task.acceptanceCriterias" class="card-text">
-      <input type="checkbox" (click)="toggleCriteria(critere)" *ngIf="!critere.value">
-      <input type="checkbox" (click)="toggleCriteria(critere)" *ngIf="critere.value" checked>
-      {{ critere.key }}
+        <input type="checkbox" (click)="toggleCriteria(critere)" *ngIf="!critere.value">
+        <input type="checkbox" (click)="toggleCriteria(critere)" *ngIf="critere.value && task.state !== 'Done'" checked>
+        <input type="checkbox"  *ngIf="task.state === 'Done'" checked disabled>
+        
+        {{ critere.key }}
     </p>
     <a *ngIf="task.state === 'QA'" (click)="backToWIP()" class="card-link btn btn-primary">Remettre en WIP</a>
     <a *ngIf="task.state !== 'Done'" (click)="toNextStep()" [ngClass]="{'adisabled':!isAllChecked()}"
