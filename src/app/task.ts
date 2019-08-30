@@ -5,5 +5,5 @@ export class Task {
   item: string;
   personInCharge: string;
   state: string;
-  acceptanceCriteria: Map<string, boolean>;
+  acceptanceCriterias: [{ key: string, value: boolean }];
 }

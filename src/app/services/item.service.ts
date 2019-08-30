@@ -19,7 +19,6 @@ export class ItemService {
   }
 
   public getItem(id: number): Observable<Item> {
-    console.log(environment.backUrl, id)
     return this.http.get<Item>(environment.backUrl + '/items/' + id);
   }
 

@@ -1,6 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Task} from '../task';
-import {TaskService} from '../services/task.service';
+import {TaskService} from "../services/task.service";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-task',
@@ -9,20 +10,17 @@ import {TaskService} from '../services/task.service';
 })
 export class TaskComponent implements OnInit, OnDestroy {
 
-  task: Task = {
-    id: 1,
-    title: 'Ma premiere tache',
-    itemId: 1,
-    item: 'Afficher une tache',
-    personInCharge: 'David Schieffer',
-    state: 'Todo',
-    acceptanceCriteria: new Map().set('Mon premier critere', true).set('mon deuxieme critere', false)
-  };
+  task: Task;
 
-  constructor(private taskService: TaskService) {
+  constructor(private taskService: TaskService, private route: ActivatedRoute, private router: Router) {
   }
 
   ngOnInit() {
+    const taskId = +this.route.snapshot.paramMap.get('id');
+    this.taskService.getTask(taskId).subscribe(
+      result => this.task = result,
+      error => console.error("Une erreur est survenue", error)
+    )
   }
 
   ngOnDestroy() {
@@ -42,23 +40,23 @@ export class TaskComponent implements OnInit, OnDestroy {
         break;
       default:
     }
+    this.taskService.editTask(this.task).subscribe()
   }
 
   backToWIP() {
     this.task.state = 'WIP';
+    this.taskService.editTask(this.task).subscribe()
   }
 
-  checkCriteria(critere: string) {
-    if (this.task.acceptanceCriteria.get(critere) == false)
-      this.task.acceptanceCriteria.set(critere, true);
-    else
-      this.task.acceptanceCriteria.set(critere, false);
+  toggleCriteria(criteria) {
+    criteria.value = !criteria.value
+    this.taskService.editTask(this.task).subscribe()
   }
 
   isAllChecked() {
     if (this.task.state == 'QA') {
-      for (let critere of this.task.acceptanceCriteria.entries()) {
-        if (!critere[1]) {
+      for (let critere of this.task.acceptanceCriterias) {
+        if (!critere.value) {
           return false;
         }
       }

@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { Item } from '../item';
+import {Component, OnInit} from '@angular/core';
+import {Task} from '../task';
+import {TaskService} from "../services/task.service";
+import {Item} from "../item";
+import {ItemService} from "../services/item.service";
 
 @Component({
   selector: 'app-home',
@@ -8,17 +11,28 @@ import { Item } from '../item';
 })
 export class HomeComponent implements OnInit {
 
+  tasks: Task[];
   items: Item[];
 
-  constructor() { }
+  constructor(private taskService: TaskService, private itemService: ItemService) { }
 
   ngOnInit() {
+    this.taskService.getTasks().subscribe(
+      result => this.tasks = result,
+      error => console.log("Une erreur est survenue", error)
+    )
+    this.itemService.getItems().subscribe(
+      result => this.items = result,
+      error => console.log("Une erreur est survenue", error)
+    )
   }
 
-  private getItemTitle(id: number) {
-    return this.items[id].title;
+  shouldDisplayTask(task: Task, itemId: number, etat: string) {
+    if (task.itemId !== itemId) {
+      return false;
+    } else if (task.state !== etat) {
+      return false;
   }
-
-
-
+    return true;
+  }
 }

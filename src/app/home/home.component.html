@@ -1,19 +1,56 @@
-<div class="row">
-    <div class="col">
-     <app-item></app-item>
-      <ul class="list-group">
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-          <a>ITEM 1</a>
-          <span class="badge badge-primary badge-pill">14 tâches</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a>ITEM 2</a>
-          <span class="badge badge-primary badge-pill">2 tâches</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-            <a>ITEM 3</a>
-          <span class="badge badge-primary badge-pill">1 tâches</span>
-        </li>
-      </ul>
-    </div>
-</div>
+<table class="table table-bordered">
+  <thead>
+  <tr>
+    <th scope="col">PBI</th>
+    <th scope="col">Todo</th>
+    <th scope="col">WIP</th>
+    <th scope="col">QA</th>
+    <th scope="col">Done</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let item of items">
+    <th scope="row" class="btn btn-info">
+      <a routerLink="/items/{{ item.id }}">
+        {{ item.id }} - {{ item.title }}
+      </a>
+    </th>
+    <td>
+      <p *ngFor="let task of tasks" class="btn-primary">
+        <span *ngIf="shouldDisplayTask(task,item.id,'Todo')">
+          <a routerLink="/tasks/{{ task.id }}">
+            {{ task.title }} - {{ task.personInCharge }}
+          </a>
+        </span>
+      </p>
+    </td>
+    <td>
+      <p *ngFor="let task of tasks" class="btn-info">
+        <span *ngIf="shouldDisplayTask(task,item.id,'WIP')">
+          <a routerLink="/tasks/{{ task.id }}">
+            {{ task.title }} - {{ task.personInCharge }}
+          </a>
+        </span>
+      </p>
+    </td>
+    <td>
+      <p *ngFor="let task of tasks" class="btn-warning">
+        <span *ngIf="shouldDisplayTask(task,item.id,'QA')">
+          <a routerLink="/tasks/{{ task.id }}">
+            {{ task.title }} - {{ task.personInCharge }}
+          </a>
+        </span>
+      </p>
+    </td>
+    <td>
+      <p *ngFor="let task of tasks" class="btn-success">
+        <span *ngIf="shouldDisplayTask(task,item.id,'Done')">
+          <a routerLink="/tasks/{{ task.id }}">
+            {{ task.title }} - {{ task.personInCharge }}
+          </a>
+        </span>
+      </p>
+    </td>
+  </tr>
+  </tbody>
+</table>
