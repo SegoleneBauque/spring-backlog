@@ -9,6 +9,12 @@
       "id": 2,
       "title": "Je veux cliquer sur l'autre bouton",
       "userStory": "Je suis vraiment tatillon ! Je veux mes boutons !"
+    },
+    {
+      "title": "Super PBI",
+      "userStory": "Je veux être capable de créer une US",
+      "tasks": null,
+      "id": 3
     }
   ],
   "tasks": [
@@ -19,6 +25,7 @@
       "item": "Je veux cliquer sur le bouton",
       "personInCharge": "Cyrille",
       "state": "Todo",
+
       "acceptanceCriterias": [
         {
           "key": "La revue de code a été effectuée",
@@ -48,7 +55,7 @@
       "acceptanceCriterias": [
         {
           "key": "La revue de code a été effectuée",
-          "value": false
+          "value": true
         },
         {
           "key": "Les tests définis dans la User Story ont été réalisés et passés avec succès, notamment par l’équipe de Quality Assurance",
@@ -64,19 +71,5 @@
         }
       ]
     },
-    {
-      "title": "Nouvelle TACHE",
-      "state": "Todo",
-      "itemId": 1,
-      "item": "Je veux cliquer sur le bouton",
-      "personInCharge": "Cyrille Nicaise",
-      "acceptanceCriterias": [
-        {
-          "key": "Aucun",
-          "value": true
-        }
-      ],
-      "id": 3
-    }
   ]
 }
