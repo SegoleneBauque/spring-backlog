@@ -18,7 +18,7 @@
       "itemId": 1,
       "item": "Je veux cliquer sur le bouton",
       "personInCharge": "Cyrille",
-      "state": "WIP",
+      "state": "Todo",
       "acceptanceCriterias": [
         {
           "key": "La revue de code a été effectuée",
@@ -44,7 +44,7 @@
       "itemId": 2,
       "item": "Je veux cliquer sur l'autre bouton",
       "personInCharge": "Ségolène",
-      "state": "WIP",
+      "state": "Todo",
       "acceptanceCriterias": [
         {
           "key": "La revue de code a été effectuée",
@@ -63,6 +63,20 @@
           "value": false
         }
       ]
+    },
+    {
+      "title": "Nouvelle TACHE",
+      "state": "Todo",
+      "itemId": 1,
+      "item": "Je veux cliquer sur le bouton",
+      "personInCharge": "Cyrille Nicaise",
+      "acceptanceCriterias": [
+        {
+          "key": "Aucun",
+          "value": true
+        }
+      ],
+      "id": 3
     }
   ]
 }
