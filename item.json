@@ -9,6 +9,12 @@
       "id": 2,
       "title": "Je veux cliquer sur l'autre bouton",
       "userStory": "Je suis vraiment tatillon ! Je veux mes boutons !"
+    },
+    {
+      "title": "Super PBI",
+      "userStory": "Je veux être capable de créer une US",
+      "tasks": null,
+      "id": 3
     }
   ],
   "tasks": [
@@ -18,7 +24,7 @@
       "itemId": 1,
       "item": "Je veux cliquer sur le bouton",
       "personInCharge": "Cyrille",
-      "state": "WIP",
+      "state": "QA",
       "acceptanceCriterias": [
         {
           "key": "La revue de code a été effectuée",
@@ -48,7 +54,7 @@
       "acceptanceCriterias": [
         {
           "key": "La revue de code a été effectuée",
-          "value": false
+          "value": true
         },
         {
           "key": "Les tests définis dans la User Story ont été réalisés et passés avec succès, notamment par l’équipe de Quality Assurance",
@@ -63,6 +69,32 @@
           "value": false
         }
       ]
+    },
+    {
+      "title": "Manger des spaghettis",
+      "state": "Done",
+      "itemId": 3,
+      "item": "Super PBI",
+      "personInCharge": "Micka",
+      "acceptanceCriterias": [
+        {
+          "key": "Faire chauffer les pates",
+          "value": true
+        },
+        {
+          "key": "Mettre la table",
+          "value": true
+        },
+        {
+          "key": "Prendre une fourchette",
+          "value": true
+        },
+        {
+          "key": "Ne pas faire de tâches",
+          "value": true
+        }
+      ],
+      "id": 3
     }
   ]
 }
