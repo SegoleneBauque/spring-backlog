@@ -10,15 +10,15 @@
   </thead>
   <tbody>
   <tr *ngFor="let item of items">
-    <th scope="row" class="btn btn-info">
-      <a routerLink="/items/{{ item.id }}">
+    <th routerLink="/items/{{ item.id }}" scope="row" class="btn btn-info">
+      <a>
         {{ item.id }} - {{ item.title }}
       </a>
     </th>
     <td>
-      <p *ngFor="let task of tasks" class="btn-primary">
+      <p *ngFor="let task of tasks" routerLink="/tasks/{{ task.id }}" class="btn-primary">
         <span *ngIf="shouldDisplayTask(task,item.id,'Todo')">
-          <a routerLink="/tasks/{{ task.id }}">
+          <a>
             {{ task.title }} - {{ task.personInCharge }}
           </a>
         </span>
