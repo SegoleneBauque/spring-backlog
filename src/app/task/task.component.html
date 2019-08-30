@@ -11,7 +11,7 @@
       <input type="checkbox" (click)="toggleCriteria(critere)" *ngIf="critere.value" checked>
       {{ critere.key }}
     </p>
-    <a *ngIf="task.state === 'QA'" (click)="backToWIP()" class="card-link">Remettre en WIP</a>
+    <a *ngIf="task.state === 'QA'" (click)="backToWIP()" class="card-link btn btn-primary">Remettre en WIP</a>
     <a *ngIf="task.state !== 'Done'" (click)="toNextStep()" [ngClass]="{'adisabled':!isAllChecked()}"
        class="card-link btn btn-primary" id="nextStep">Passer à l'étape suivante</a>
     <a class="btn btn-primary" routerLink="/home">Retour</a>

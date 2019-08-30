@@ -40,12 +40,14 @@ export class TaskComponent implements OnInit, OnDestroy {
         break;
       default:
     }
-    this.taskService.editTask(this.task).subscribe()
+    this.taskService.editTask(this.task).subscribe();
+    setTimeout(() => this.router.navigateByUrl('/'), 1);
   }
 
   backToWIP() {
     this.task.state = 'WIP';
-    this.taskService.editTask(this.task).subscribe()
+    this.taskService.editTask(this.task).subscribe();
+    setTimeout(() => this.router.navigateByUrl('/'), 1);
   }
 
   toggleCriteria(criteria) {
